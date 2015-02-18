@@ -1,0 +1,24 @@
+{
+  "name": "1stdoc.js",
+  "version": "1.0.0",
+  "description": "First-class documentation for JavaScript",
+  "main": "macros/DOC.js",
+  "scripts": {
+    "test": "npm run make && npm run exec",
+    "make": "sjs -m ./macros/DOC.js test.js -o test-build.js && echo \"build done!\"",
+    "exec": "node test-build.js"
+  },
+  "keywords": [
+    "documentation",
+    "docs",
+    "first-class",
+    "lisp",
+    "macros",
+    "sweet.js"
+  ],
+  "author": "Gage Peterson <justgage@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "sweet.js": "^0.7.4"
+  }
+}
