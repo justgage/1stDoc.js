@@ -1,4 +1,11 @@
+macro to_str {
+  case { _ ($toks ...) } => {
+    return [makeValue(#{ $toks ... }.map(unwrapSyntax).join(''), #{ here })];
+  }
+}
+
 macro DOC {
+
    rule {
       this $y
    } => {
@@ -11,6 +18,15 @@ macro DOC {
       json $y
    } => {
       doc : function() {
+         console.log($y);
+      }
+   }
+
+   // document properties
+   rule {
+      prop $x $y
+   } => {
+      to_str($x "_doc") : function() {
          console.log($y);
       }
    }
