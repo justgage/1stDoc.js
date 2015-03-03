@@ -2,7 +2,7 @@
  * This is an example of how the first class documentation is used 
  */
 function Constructor() {
-   DOC this "This is a constructor"
+   DOC this "This is a constructor";
 }
 
 a = new Constructor();
@@ -26,14 +26,14 @@ b.fun_doc();
 b.CONST_doc();
 
 // global
-DOC glob Jquery "Some global documentation for $'s Jquery";
-Jquery = { 
+DOC glob jQuery "Some global documentation for $'s jQuery";
+jQuery = { 
    thisIs : "untouched"
 };
 
-doc.Jquery();
+doc.jQuery();
 
-console.log(Jquery);
+console.log(jQuery);
 
 
 var d = {};
