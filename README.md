@@ -11,35 +11,41 @@ You're hacking away on campus but don't have internet because the school's inter
 # Example
 
 Here's an example of it in action:
-```
+```js
 /**
  * This is an example of how the first class documentation is used 
  */
-
-// This is for anything that uses "this"
 function Constructor() {
    DOC this "This is a constructor"
 }
 
 a = new Constructor();
 
-a.doc(); // console.logs "This is a constructor"
+a.doc();
 
-// for JSON literals
 b = {
-   DOC json "This is a json literal object"
+   DOC json "This is a json literal object",
+
+   DOC prop fun "This is a fun function!",
+   fun : function (x, y) {
+      return x + y;
+   },
+
+   DOC prop CONST "This is a fun constant",
+   CONST: 2
 }
 
-b.doc(); // console.logs "This is a json literal object"
+b.doc();
+b.fun_doc();
+b.CONST_doc();
 
-// global document object
-// Note how this doesn't touch the real object
+// global
 DOC glob Jquery "Some global documentation for $'s Jquery";
 Jquery = { 
    thisIs : "untouched"
 };
 
-doc.Jquery(); // Yep, you guessed it.
+doc.Jquery();
 
 console.log(Jquery);
 
@@ -48,6 +54,7 @@ var d = {};
 DOC d "Tack on documentation later"
 
 d.doc();
+
 
 ```
 
@@ -62,7 +69,7 @@ then you can use it as a module like so:
 ```
 sjs -m ./place/where/DOC.js yourCodeWith1stClassDocs.js
 ```
-(more docs here)[https://github.com/mozilla/sweet.js#sharing]
+[more docs here](https://github.com/mozilla/sweet.js#sharing)
 
 
 # Limitations
